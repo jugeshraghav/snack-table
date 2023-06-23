@@ -1,7 +1,6 @@
 import { snacks } from "../constants/snacksData";
 import "../App.css";
-import { useContext, useState } from "react";
-import { SnackDataContext } from "../contexts/SnackDataContext";
+import { useState } from "react";
 
 export const SnackTable = () => {
   const [allSnacks, setAllSnacks] = useState(snacks);
