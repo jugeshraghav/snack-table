@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/***********Snack Table**********/
+.snack-table-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 50%;
+  padding: 1rem;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th:hover {
+  cursor: pointer;
+  background-color: yellow;
+}
+th,
+td {
+  padding: 1rem;
+}
