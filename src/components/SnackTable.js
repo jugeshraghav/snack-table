@@ -31,7 +31,6 @@ export const SnackTable = () => {
   };
 
   const sortByIdHandler = () => {
-    console.log("id");
     if (ascOrder) {
       setAllSnacks([...allSnacks.sort((a, b) => b.id - a.id)]);
       setAscOrder(false);
@@ -75,7 +74,21 @@ export const SnackTable = () => {
     }
   };
   const sortByWeightHandler = () => {
-    console.log("weight");
+    if (ascOrder) {
+      setAllSnacks([
+        ...allSnacks.sort(
+          (a, b) => parseInt(b.product_weight) - parseInt(a.product_weight)
+        ),
+      ]);
+      setAscOrder(false);
+    } else {
+      setAllSnacks([
+        ...allSnacks.sort(
+          (a, b) => parseInt(a.product_weight) - parseInt(b.product_weight)
+        ),
+      ]);
+      setAscOrder(true);
+    }
   };
   const sortByPriceHandler = () => {
     if (ascOrder) {
@@ -160,7 +173,7 @@ export const SnackTable = () => {
                 <td>{product_weight}</td>
                 <td>{price}</td>
                 <td>{calories}</td>
-                <td>{ingredients}</td>
+                <td>{ingredients.join()}</td>
               </tr>
             )
           )}
